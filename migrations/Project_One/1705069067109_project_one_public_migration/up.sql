@@ -8,6 +8,7 @@ PRIMARY KEY(id)
 
 CREATE TABLE pizza(id serial NOT NULL, title integer NOT NULL, PRIMARY KEY(id));
 
+
 CREATE TABLE pizza_topping(
 id serial NOT NULL,
 title text NOT NULL,
@@ -15,6 +16,7 @@ emoji text NOT NULL,
 available boolean NOT NULL,
 PRIMARY KEY(id)
 );
+
 
 CREATE TABLE pizza_topping_pizza(
 id serial NOT NULL,
@@ -29,6 +31,7 @@ friend_id integer NOT NULL,
 pizza_id integer NOT NULL,
 PRIMARY KEY(id)
 );
+
 
 ALTER TABLE pizza_topping_pizza
 ADD CONSTRAINT pizza_pizza_topping_pizza FOREIGN KEY(pizza_id) REFERENCES pizza (id) ON DELETE Cascade;
